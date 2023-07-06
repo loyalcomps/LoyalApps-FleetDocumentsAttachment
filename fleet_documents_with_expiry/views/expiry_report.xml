@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+          <record id="action_expired_documents" model="ir.actions.act_window">
+            <field name="name">Documents which are going to be expired within 30 Days : </field>
+            <field name="res_model">fleet.documents</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('expiry_date', '!=', False), ('expiry_date', '&lt;=', (datetime.date.today() + datetime.timedelta(days=30)).strftime('%Y-%m-%d')), ('notify_expiry', '=', True)]</field>
+            <field name="context">{}</field>
+
+          </record>
+
+          <menuitem id="menu_fleet_expired_documents" name="Documents Expiry Reminder" parent="fleet.menu_fleet_reporting" action="action_expired_documents" sequence="40"/>
+    </data>
+
+
+</odoo>

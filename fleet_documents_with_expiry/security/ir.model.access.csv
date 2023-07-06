@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+fleet_docs,Fleet Documents With Expiry,fleet_documents_with_expiry.model_fleet_documents,base.group_user,1,1,1,1
+
+
+
+
+
+
